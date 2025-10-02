@@ -1,0 +1,97 @@
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import Avatar from '@mui/material/Avatar';
+import { styled } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import profileImg from '../../assets/images/profileImg1.png';
+
+// ===== Styled Components =====
+const HeroContainer = styled(Box)(({ theme }) => ({
+  minHeight: '100vh',
+  display: 'flex',
+  width:"100%",
+  alignItems: 'center',
+  padding: theme.spacing(6, 2),
+  background: theme.palette.background.default,
+  [theme.breakpoints.up('md')]: {
+    padding: theme.spacing(5, 3),
+  },
+}));
+
+const HeroHeading = styled(Typography)(({ theme }) => ({
+  fontWeight: 700,
+  marginBottom: theme.spacing(2),
+  fontSize: '2.2rem',
+  [theme.breakpoints.up('md')]: {
+    fontSize: '3rem',
+  },
+}));
+
+const HeroSubText = styled(Typography)(({ theme }) => ({
+  color: theme.palette.text.secondary,
+  maxWidth: '500px',
+  marginBottom: theme.spacing(4),
+}));
+
+const ProfileImage = styled(Avatar)(({ theme }) => ({
+  width: '80%',
+  height: '60%',
+  borderRadius: '10%',
+  border: `4px solid ${theme.palette.primary.main}`,
+  boxShadow: '0px 8px 24px rgba(0,0,0,0.4)',
+  [theme.breakpoints.up('md')]: {
+    width: 530,
+    height: 600,
+    borderRadius: '50%',
+  },
+}));
+
+// ===== Component =====
+const Hero = () => {
+  return (
+    <HeroContainer id="about">
+      <Grid container spacing={10} alignItems="center" justifyContent="space-between">
+        {/* LEFT SIDE CONTENT */}
+        <Grid item xs={12} md={6}>
+          <Typography variant="h6" color="primary.main" sx={{ mb: 1 }}>
+            Welcome to my portfolio!
+          </Typography>
+
+          <HeroHeading variant="h1">
+            Hello, my <br /> name’s{' '}
+            <Box component="span" sx={{ color: 'primary.main' }}>
+              Shivank Singh.
+            </Box>
+          </HeroHeading>
+
+          <HeroSubText variant="body1">
+            I’m a full stack developer. Currently working with <br />
+            <Box component="span" sx={{ color: 'secondary.main' }}>
+              Techstalwarts
+            </Box>{' '}
+            as a Software Developer.
+          </HeroSubText>
+
+          <Box sx={{ display: 'flex', gap: 5, flexWrap: 'wrap' }}>
+            <Button variant="contained" color="primary">
+              Download CV
+            </Button>
+            <Button variant="outlined" color="primary">
+              See my work →
+            </Button>
+          </Box>
+        </Grid>
+
+        {/* RIGHT SIDE IMAGE */}
+        <Grid item xs={12} md={5}>
+          <Box display="flex" justifyContent="center">
+            <ProfileImage src={profileImg} alt="profile" />
+          </Box>
+        </Grid>
+      </Grid>
+    </HeroContainer>
+  );
+};
+
+export default Hero;

@@ -8,6 +8,7 @@ import NotFoundPage from '../pages/ErrorhandlerPages/NotFoundPage';
 
 // Pages
 import DashboardPage from '../pages/DashboardPage';
+import AboutPage from '../pages/AboutPage';
 
 const PrivateRoutes = () => {
   return (
@@ -20,6 +21,7 @@ const PrivateRoutes = () => {
         <Route element={<PrivateLayout />}>
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="dashboard" element={<DashboardPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
