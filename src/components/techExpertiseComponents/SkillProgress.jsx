@@ -3,7 +3,6 @@ import { Box, Typography, LinearProgress, styled, useTheme } from '@mui/material
 
 // ===== Styled Component =====
 const Container = styled(Box)(({ theme }) => ({
-  background: theme.palette.background.default,
   padding: '100px 24px',
   [theme.breakpoints.down('sm')]: {
     padding: '60px 16px',

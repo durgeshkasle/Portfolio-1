@@ -8,6 +8,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  useTheme,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
@@ -31,20 +32,20 @@ const ExperienceContainer = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   alignItems: 'center',
   padding: theme.spacing(8, 1),
-  background: theme.palette.background.default,
 }));
 
 const ExperienceCard = styled(Paper)(({ theme }) => ({
-  padding: theme.spacing(5, 0),
+  padding: theme.spacing(5, 3),
   borderRadius: '20px',
   background: 'linear-gradient(135deg, #101624, #0a0f1c)',
   color: theme.palette.text.primary,
   boxShadow: '0px 8px 24px rgba(0,0,0,0.4)',
-  maxWidth: '1200px', // 👈 keep as requested
   width: '100%',
 }));
 
 export default function Experience() {
+  const theme = useTheme();
+
   const highlights = [
     {
       text: 'Proficient in building scalable full-stack applications using React.js, Node.js, Express, and MongoDB with clean and maintainable code.',
@@ -109,16 +110,19 @@ export default function Experience() {
           color: 'primary.main',
           mb: 4,
           textAlign: 'center',
+          background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
         }}
       >
-        Experience
+        Professional Experience
       </Typography>
 
       <ExperienceCard>
         <Grid container spacing={4}>
           {/* Summary */}
           <Grid item xs={12}>
-            <Typography variant="h5" sx={{ mb: 2, pl: '25px', pr: '25px' }}>
+            <Typography variant="h5" sx={{ mb: 2 }}>
               Professional Summary
             </Typography>
             <Typography
@@ -140,7 +144,7 @@ export default function Experience() {
 
           {/* Key Highlights */}
           <Grid item xs={12}>
-            <Typography variant="h5" sx={{ mb: 2, pl: { xs: '25px', md: '10px' } }}>
+            <Typography variant="h5" sx={{ mb: 2 }}>
               Key Highlights
             </Typography>
             <List sx={{ pl: { xs: 0, md: 1 }, pr: { xs: 0, md: 1 } }}>

@@ -39,7 +39,6 @@ import AnimationIcon from '@mui/icons-material/Animation';
 
 // ======== Styled Components ========
 const Container = styled(Box)(({ theme }) => ({
-  background: theme.palette.background.default,
   padding: '100px 24px',
   minHeight: '100vh',
   [theme.breakpoints.down('sm')]: {

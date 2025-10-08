@@ -22,7 +22,6 @@ const EducationContainer = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   alignItems: 'center',
   padding: theme.spacing(8, 2),
-  background: theme.palette.background.default,
 }));
 
 const EducationCard = styled(Paper)(({ theme }) => ({
@@ -31,7 +30,6 @@ const EducationCard = styled(Paper)(({ theme }) => ({
   background: 'linear-gradient(135deg, #101624, #0a0f1c)',
   color: theme.palette.text.primary,
   boxShadow: '0px 8px 24px rgba(0,0,0,0.4)',
-  maxWidth: '1200px',
   width: '100%',
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(4),

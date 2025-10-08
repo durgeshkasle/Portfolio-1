@@ -14,7 +14,6 @@ const HeroContainer = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   padding: theme.spacing(6, 2),
-  background: theme.palette.background.default,
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(5, 3),
   },
