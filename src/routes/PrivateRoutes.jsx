@@ -10,6 +10,7 @@ import NotFoundPage from '../pages/ErrorhandlerPages/NotFoundPage';
 import DashboardPage from '../pages/DashboardPage';
 import AboutPage from '../pages/AboutPage';
 import TechExpertisePage from '../pages/TechExpertisePage';
+import ProjectsPage from '../pages/ProjectsPage';
 
 const PrivateRoutes = () => {
   return (
@@ -24,6 +25,8 @@ const PrivateRoutes = () => {
           <Route path="dashboard" element={<DashboardPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/tech-expertise" element={<TechExpertisePage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
