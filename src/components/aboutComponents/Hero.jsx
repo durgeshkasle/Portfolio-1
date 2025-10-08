@@ -10,8 +10,9 @@ import profileImg from '../../assets/images/profileImg1.png';
 const HeroContainer = styled(Box)(({ theme }) => ({
   minHeight: '100vh',
   display: 'flex',
-  width:"100%",
+  width: '100%',
   alignItems: 'center',
+  justifyContent: 'center',
   padding: theme.spacing(6, 2),
   background: theme.palette.background.default,
   [theme.breakpoints.up('md')]: {
@@ -51,7 +52,7 @@ const ProfileImage = styled(Avatar)(({ theme }) => ({
 const Hero = () => {
   return (
     <HeroContainer id="about">
-      <Grid container spacing={10} alignItems="center" justifyContent="space-between">
+      <Grid container spacing={10} alignItems="center">
         {/* LEFT SIDE CONTENT */}
         <Grid item xs={12} md={6}>
           <Typography variant="h6" color="primary.main" sx={{ mb: 1 }}>

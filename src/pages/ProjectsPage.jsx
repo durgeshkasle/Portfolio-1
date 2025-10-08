@@ -1,10 +1,8 @@
-import React from 'react'
-import ProjectsContainer from '../containers/ProjectsContainer'
+import React from 'react';
+import ProjectsContainer from '../containers/ProjectsContainer';
 
 const ProjectsPage = () => {
-  return (
-    <ProjectsContainer/>
-  )
-}
+  return <ProjectsContainer />;
+};
 
-export default ProjectsPage
+export default ProjectsPage;

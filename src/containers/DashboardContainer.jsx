@@ -9,7 +9,7 @@ const DashboardContainer = () => {
   if (error) return <p>Error fetching products</p>;
 
   return (
-    <div style={{ padding: '2rem', backgroundColor:"red"}}>
+    <div style={{ padding: '2rem', backgroundColor: 'red' }}>
       <h2>Products List</h2>
       {/* <div
         style={{

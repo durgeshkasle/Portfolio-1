@@ -8,9 +8,9 @@ const AboutContainer = () => {
   return (
     <div>
       <Hero />
-      <Experience/>
-      <Education/>
-      <Stats/>
+      <Experience />
+      <Education />
+      <Stats />
     </div>
   );
 };

@@ -1,10 +1,8 @@
-import React from 'react'
-import TechExpertiseContainer from '../containers/TechExpertiseContainer'
+import React from 'react';
+import TechExpertiseContainer from '../containers/TechExpertiseContainer';
 
 const TechExpertisePage = () => {
-  return (
-    <TechExpertiseContainer/>
-  )
-}
+  return <TechExpertiseContainer />;
+};
 
-export default TechExpertisePage
+export default TechExpertisePage;

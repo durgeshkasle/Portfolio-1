@@ -15,8 +15,10 @@
 
 .app-header {
   width: '100%';
+  max-width: '1300px';
+  position: 'sticky';
   padding: '1rem 0';
-  background-color: 'var(--color-primary)';
+  background-color: 'red';
   color: '#fff';
   text-align: 'center';
   box-shadow: '0 2px 4px rgba(0,0,0,0.1)';

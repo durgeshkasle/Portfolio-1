@@ -101,7 +101,7 @@ export default function Education() {
       <EducationCard>
         <Box sx={{ display: { xs: 'block', md: 'flex' }, justifyContent: 'space-between' }}>
           {/* Education */}
-          <Box sx={{marginLeft:{xs:"0px", md:"-5px"}}}>
+          <Box sx={{ marginLeft: { xs: '0px', md: '-5px' } }}>
             <Typography variant="h5" sx={{ mb: 2 }}>
               Education
             </Typography>
@@ -119,7 +119,7 @@ export default function Education() {
           </Box>
 
           {/* Certifications */}
-          <Box sx={{mr:{xs:"0px", md:"20px"}}}>
+          <Box sx={{ mr: { xs: '0px', md: '20px' } }}>
             <Typography variant="h5" sx={{ mb: 2 }}>
               Certifications
             </Typography>

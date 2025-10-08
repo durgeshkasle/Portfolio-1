@@ -26,7 +26,6 @@ const PrivateRoutes = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/tech-expertise" element={<TechExpertisePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
-
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

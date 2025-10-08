@@ -1,10 +1,17 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import '../App.css';
+import LayoutHeader from '../components/layoutComponents/Header';
+import LayoutFooter from '../components/layoutComponents/Footer';
 
 export const PublicLayout = () => {
   return (
-    <main style={{ minHeight: '100vh', backgroundColor: 'var(--color-background)' }}>
+    <main
+      style={{
+        minHeight: '100vh',
+        backgroundColor: 'var(--color-background)',
+      }}
+    >
       <div className="container">
         <Outlet />
       </div>
@@ -14,12 +21,50 @@ export const PublicLayout = () => {
 
 export const PrivateLayout = () => {
   return (
-    <div className="container">
-      <header className="app-header">Header</header>
-      <main style={{ minHeight: 'calc(100vh - 90px)' }}>
-        <Outlet />
-      </main>
-      <footer className="app-footer">Footer</footer>
-    </div>
+    <>
+      {/* ===== Fixed Header ===== */}
+      <header
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          zIndex: 1100,
+          backgroundColor: 'transparent',
+        }}
+      >
+        <LayoutHeader />
+      </header>
+
+      {/* ===== Page Content ===== */}
+      <div
+        className="container"
+        style={{
+          paddingTop: '90px', // Matches your header height
+        }}
+      >
+        <main
+          style={{
+            minHeight: 'calc(100vh - 90px)',
+            marginBottom: '100px',
+          }}
+        >
+          <Outlet />
+        </main>
+
+        <footer
+          style={{
+            position: 'fixed',
+            bottom: 0,
+            left: 0,
+            width: '100%',
+            zIndex: 1100,
+            backgroundColor: 'transparent',
+          }}
+        >
+          <LayoutFooter />
+        </footer>
+      </div>
+    </>
   );
 };

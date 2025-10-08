@@ -6,11 +6,11 @@ import SkillTagCloud from '../components/techExpertiseComponents/SkillTagCloud';
 const TechExpertiseContainer = () => {
   return (
     <>
-     <Technologies/>
-     <SkillProgress/>
-     <SkillTagCloud/>
+      <Technologies />
+      <SkillProgress />
+      <SkillTagCloud />
     </>
-  )
-}
+  );
+};
 
-export default TechExpertiseContainer
+export default TechExpertiseContainer;
