@@ -1,0 +1,30 @@
+import React from 'react';
+import { Typography, Box } from '@mui/material';
+
+const HeadingAndStance = ({ heading, stance }) => {
+  return (
+    <Box textAlign="center" sx={{ mb: 6 }}>
+      <Typography
+        variant="h1"
+        fontWeight={800}
+        sx={{
+          mb: 2,
+          background: (theme) =>
+            `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        }}
+      >
+        {heading}
+      </Typography>
+      <Typography
+        variant="h6"
+        sx={{ color: (theme) => theme.palette.text.secondary, maxWidth: '700px', mx: 'auto' }}
+      >
+        {stance}
+      </Typography>
+    </Box>
+  );
+};
+
+export default HeadingAndStance;

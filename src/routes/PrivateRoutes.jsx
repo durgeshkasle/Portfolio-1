@@ -12,6 +12,7 @@ import AboutPage from '../pages/AboutPage';
 import TechExpertisePage from '../pages/TechExpertisePage';
 import ProjectsPage from '../pages/ProjectsPage';
 import HomePage from '../pages/HomePage';
+import ContactPage from '../pages/ContactPage';
 
 const PrivateRoutes = () => {
   return (
@@ -28,6 +29,7 @@ const PrivateRoutes = () => {
           <Route path="/tech-expertise" element={<TechExpertisePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/home" element={<HomePage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
