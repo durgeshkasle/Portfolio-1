@@ -29,6 +29,7 @@ const StatCard = styled(Paper)(({ theme }) => ({
   '&:hover': {
     transform: 'translateY(-6px)',
     boxShadow: '0px 12px 28px rgba(0,0,0,0.45)',
+    border: `1px solid ${theme.palette.primary.light}`,
   },
 }));
 

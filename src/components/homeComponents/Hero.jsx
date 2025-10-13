@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import { styled } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import profileImg from '../../assets/images/profileImg1.png';
+import profileImg from '../../assets/images/homeImages/profileImg.jpeg';
 
 // ===== Styled Components =========
 const HeroContainer = styled(Box)(({ theme }) => ({

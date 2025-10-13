@@ -125,6 +125,12 @@ export default function ContactForm({
               maxWidth: '700px',
               margin: 'auto',
               boxShadow: theme.shadows[4],
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                transform: 'translateY(-8px)',
+                boxShadow: theme.shadows[8],
+                border: `1px solid ${theme.palette.primary.light}`,
+              },
             }}
           >
             <Box sx={{ textAlign: 'center', mb: 2 }}>

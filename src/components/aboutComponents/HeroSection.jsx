@@ -83,6 +83,7 @@ const StatsCard = styled(Box)(({ theme }) => ({
   '&:hover': {
     transform: 'translateY(-6px)',
     boxShadow: '0 12px 40px rgba(0,0,0,0.55)',
+    border: `1px solid ${theme.palette.primary.light}`,
   },
   [theme.breakpoints.down('sm')]: {
     padding: '20px',

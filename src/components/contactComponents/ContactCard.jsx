@@ -19,6 +19,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
   '&:hover': {
     transform: 'translateY(-8px)',
     boxShadow: theme.shadows[8],
+    border: `1px solid ${theme.palette.primary.light}`,
   },
 
   [theme.breakpoints.down('sm')]: {

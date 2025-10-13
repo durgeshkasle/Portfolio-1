@@ -59,7 +59,7 @@ const ContactContainer = () => {
 
   // ===== Handle Form Submit =====
   const handleFormSubmit = async (formData) => {
-    console.log(formData)
+    console.log(formData);
     try {
       setIsLoading(true);
       const response = await sendEmailService(formData);
