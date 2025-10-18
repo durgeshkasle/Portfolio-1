@@ -1,9 +1,9 @@
 const palette = {
   mode: 'dark',
   primary: {
-    main: '#2979ff',
-    light: '#5393ff',
-    dark: '#1c54b2',
+    main: '#CAAF5C',
+    light: '#D4C070',
+    dark: '#A08F4A',
     contrastText: '#ffffff',
   },
   secondary: {
@@ -13,8 +13,8 @@ const palette = {
     contrastText: '#ffffff',
   },
   background: {
-    default: 'linear-gradient(135deg, #0a0f1c 0%, #101624 100%)',
-    paper: 'rgba(16, 22, 36, 0.9)', // optional, for cards/dialogs
+    default: '#000000',
+    paper: 'rgba(0, 0, 0, 0.93)', // optional, for cards/dialogs
   },
   text: {
     primary: '#ffffff',

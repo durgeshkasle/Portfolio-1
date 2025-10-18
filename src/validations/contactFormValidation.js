@@ -8,8 +8,8 @@ export const contactFormSchema = yup
       .string()
       .matches(/^\d{10}$/, 'Phone number must be exactly 10 digits')
       .required('Phone Number is required'),
-    user_email: yup.string().email('Invalid email').required('Email is required'),
-    subject: yup.string().required('Subject is required'),
-    message: yup.string().required('Message is required'),
+    // user_email: yup.string().email('Invalid email').required('Email is required'),
+    // subject: yup.string().required('Subject is required'),
+    // message: yup.string().required('Message is required'),
   })
   .required();

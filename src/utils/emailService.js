@@ -1,5 +1,5 @@
 // src/utils/emailService.js
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 export const sendEmailService = async (data) => {
   try {

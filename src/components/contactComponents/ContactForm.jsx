@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, CircularProgress, useTheme, Collapse, Typography, Chip } from '@mui/material';
+import { Box, Button, CircularProgress, useTheme, Typography, Chip } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Controller } from 'react-hook-form';
 import { styled } from '@mui/material/styles';
@@ -78,8 +78,6 @@ export default function ContactForm({
   handleSubmit,
   onSubmit,
   isLoading,
-  showForm,
-  setShowForm,
   formRef,
   chips,
 }) {
@@ -87,28 +85,7 @@ export default function ContactForm({
 
   return (
     <Box textAlign="center">
-      {/* ===== Toggle Button ===== */}
-      <motion.div whileHover={{ scale: 1.05 }}>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => setShowForm((prev) => !prev)}
-          sx={{
-            borderRadius: '10px',
-            fontWeight: 600,
-            textTransform: 'none',
-            px: 4,
-            py: 1.5,
-            mb: '20px',
-          }}
-        >
-          {showForm ? 'Hide Contact Form' : 'Show Contact Form'}
-        </Button>
-      </motion.div>
-
       {/* ===== Form Section ===== */}
-
-      <Collapse in={showForm} timeout="auto" unmountOnExit>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -163,8 +140,8 @@ export default function ContactForm({
                     fullWidth
                     label="Your Email"
                     margin="normal"
-                    error={!!fieldState.error}
-                    helperText={fieldState.error?.message}
+                    // error={!!fieldState.error}
+                    // helperText={fieldState.error?.message}
                   />
                 )}
               />
@@ -194,8 +171,8 @@ export default function ContactForm({
                   fullWidth
                   label="Subject"
                   margin="normal"
-                  error={!!fieldState.error}
-                  helperText={fieldState.error?.message}
+                  // error={!!fieldState.error}
+                  // helperText={fieldState.error?.message}
                 />
               )}
             />
@@ -211,8 +188,8 @@ export default function ContactForm({
                   margin="normal"
                   multiline
                   rows={4}
-                  error={!!fieldState.error}
-                  helperText={fieldState.error?.message}
+                  // error={!!fieldState.error}
+                  // helperText={fieldState.error?.message}
                 />
               )}
             />
@@ -228,7 +205,6 @@ export default function ContactForm({
             </ChipBox>
           </Box>
         </motion.div>
-      </Collapse>
     </Box>
   );
 }

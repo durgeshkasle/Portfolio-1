@@ -22,7 +22,6 @@ import ContactCard from '../components/contactComponents/ContactCard';
 const ContactContainer = () => {
   const formRef = useRef();
   const [isLoading, setIsLoading] = useState(false);
-  const [showForm, setShowForm] = useState(false);
 
   // ===== Contact Card Data =====
   const contactData = [
@@ -85,15 +84,13 @@ const ContactContainer = () => {
     handleSubmit,
     onSubmit: handleFormSubmit,
     isLoading,
-    showForm,
-    setShowForm,
     chips,
   };
 
   return (
     <Box>
       {/* ===== Heading Section ===== */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -102,16 +99,16 @@ const ContactContainer = () => {
           heading="Let's Create Something Amazing"
           stance="Ready to bring your next project to life? Let's discuss how we can build exceptional digital experiences together."
         />
-      </motion.div>
+      </motion.div> */}
 
       {/* ===== Contact Cards ===== */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         <ContactCard contacts={contactData} />
-      </motion.div>
+      </motion.div> */}
 
       {/* ===== Contact Form ===== */}
       <motion.div

@@ -26,8 +26,8 @@ const PrivateRoutes = () => {
           <Route path="/" element={<Navigate to="/home" replace />} />
           <Route path="dashboard" element={<DashboardPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/tech-expertise" element={<TechExpertisePage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/real-estate" element={<TechExpertisePage />} />
+          <Route path="finance" element={<ProjectsPage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Route>

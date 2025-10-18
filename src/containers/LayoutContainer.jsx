@@ -2,7 +2,6 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import '../App.css';
 import LayoutHeader from '../components/layoutComponents/Header';
-import LayoutFooter from '../components/layoutComponents/Footer';
 
 export const PublicLayout = () => {
   return (
@@ -43,26 +42,9 @@ export const PrivateLayout = () => {
           paddingTop: '90px', // Matches your header height
         }}
       >
-        <main
-          style={{
-            marginBottom: '100px',
-          }}
-        >
+        <main>
           <Outlet />
         </main>
-
-        <footer
-          style={{
-            position: 'fixed',
-            bottom: 0,
-            left: 0,
-            width: '100%',
-            zIndex: 1100,
-            backgroundColor: 'transparent',
-          }}
-        >
-          <LayoutFooter />
-        </footer>
       </div>
     </>
   );

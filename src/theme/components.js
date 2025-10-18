@@ -9,7 +9,7 @@ const components = {
         transition: 'all 0.3s ease',
       },
       containedPrimary: {
-        background: 'linear-gradient(90deg, #2979ff, #00c6ff)',
+        background: 'linear-gradient(90deg,rgb(69, 73, 80), #00c6ff)',
         boxShadow: '0px 4px 20px rgba(41, 121, 255, 0.5)',
         '&:hover': {
           background: 'linear-gradient(90deg, #00c6ff, #2979ff)',
