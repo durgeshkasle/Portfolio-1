@@ -11,6 +11,8 @@ import BusinessIcon from '@mui/icons-material/Business';
 import RealEstateAgentIcon from '@mui/icons-material/RealEstateAgent';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import BuildIcon from '@mui/icons-material/Build';
+import ReceiptIcon from '@mui/icons-material/Receipt';
 import LayersIcon from '@mui/icons-material/Layers';
 import { useTheme } from '@mui/material/styles';
 
@@ -89,12 +91,17 @@ const HomeContainer = () => {
     },
     {
       icon: <AccountBalanceIcon sx={{ color: theme.palette.info.main }} />,
-      title: 'Cash Credit Facilities',
+      title: 'Working Capital - Cash Credit/Overdraft',
       bg: '#152230',
     },
     {
-      icon: <AttachMoneyIcon sx={{ color: theme.palette.primary.main }} />,
-      title: 'Overdraft Facilities',
+      icon: <BuildIcon sx={{ color: theme.palette.warning.main }} />,
+      title: 'Machinery Loan',
+      bg: '#152230',
+    },
+    {
+      icon: <ReceiptIcon sx={{ color: theme.palette.secondary.main }} />,
+      title: 'Lease Rental Discounting (LRD)',
       bg: '#152230',
     },
   ];

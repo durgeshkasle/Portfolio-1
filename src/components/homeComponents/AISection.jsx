@@ -14,9 +14,10 @@ import LoanAgainstPropertyModal from '../modals/LoanAgainstPropertyModal';
 import BusinessLoanModal from '../modals/BusinessLoanModal';
 import PersonalLoanModal from '../modals/PersonalLoanModal';
 import CashCreditModal from '../modals/CashCreditModal';
-import OverdraftModal from '../modals/OverdraftModal';
 import EducationLoanModal from '../modals/EducationLoanModal';
 import RealEstateModal from '../modals/RealEstateModal';
+import MachineryLoanModal from '../modals/MachineryLoanModal';
+import LRDLoanModal from '../modals/LRDLoanModal';
 
 //======== Styled components ===========
 const Section = styled(Box)(({ theme }) => ({
@@ -146,7 +147,7 @@ const FeatureCard = styled(Box)(({ theme }) => ({
 }));
 
 const StackCard = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(2),
+  padding: theme.spacing(1.5),
   borderRadius: theme.shape.borderRadius,
   marginBottom: theme.spacing(1.5),
   display: 'flex',
@@ -160,7 +161,7 @@ const StackCard = styled(Box)(({ theme }) => ({
     boxShadow: `0 0 12px ${theme.palette.success.main}66`,
     transform: 'translateY(-3px)',
     backgroundColor: 'rgba(202, 175, 92, 0.1)',
-    border: `2px solid ${theme.palette.primary.main}`,
+    border: `0px solid ${theme.palette.primary.main}`,
     zIndex: 20,
   },
   '&:active': {
@@ -194,15 +195,15 @@ const DevelopmentStackCard = styled(Card)(({ theme }) => ({
     transition: 'opacity 0.3s ease',
   },
   
-  '&:hover': {
-    transform: 'translateY(-8px) scale(1.02)',
-    boxShadow: '0 16px 48px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(202, 175, 92, 0.2)',
-    border: '1px solid rgba(202, 175, 92, 0.3)',
+  // '&:hover': {
+  //   transform: 'translateY(-8px) scale(1.02)',
+  //   boxShadow: '0 16px 48px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(202, 175, 92, 0.2)',
+  //   border: '1px solid rgba(202, 175, 92, 0.3)',
     
-    '&::before': {
-      opacity: 1,
-    },
-  },
+  //   '&::before': {
+  //     opacity: 1,
+  //   },
+  // },
 }));
 
 const BlinkingLabel = styled(Typography)(({ theme }) => {
@@ -246,9 +247,10 @@ export default function AISection(props) {
   const [businessLoanModalOpen, setBusinessLoanModalOpen] = useState(false);
   const [personalLoanModalOpen, setPersonalLoanModalOpen] = useState(false);
   const [cashCreditModalOpen, setCashCreditModalOpen] = useState(false);
-  const [overdraftModalOpen, setOverdraftModalOpen] = useState(false);
   const [educationLoanModalOpen, setEducationLoanModalOpen] = useState(false);
   const [realEstateModalOpen, setRealEstateModalOpen] = useState(false);
+  const [machineryLoanModalOpen, setMachineryLoanModalOpen] = useState(false);
+  const [lrdLoanModalOpen, setLrdLoanModalOpen] = useState(false);
 
   const handleStackCardClick = (stackTitle) => {
     switch (stackTitle) {
@@ -267,11 +269,14 @@ export default function AISection(props) {
       case 'Education Loans':
         setEducationLoanModalOpen(true);
         break;
-      case 'Cash Credit Facilities':
+      case 'Working Capital - Cash Credit/Overdraft':
         setCashCreditModalOpen(true);
         break;
-      case 'Overdraft Facilities':
-        setOverdraftModalOpen(true);
+      case 'Machinery Loan':
+        setMachineryLoanModalOpen(true);
+        break;
+      case 'Lease Rental Discounting (LRD)':
+        setLrdLoanModalOpen(true);
         break;
       default:
         break;
@@ -538,10 +543,6 @@ export default function AISection(props) {
       open={cashCreditModalOpen} 
       onClose={() => setCashCreditModalOpen(false)} 
     />
-    <OverdraftModal 
-      open={overdraftModalOpen} 
-      onClose={() => setOverdraftModalOpen(false)} 
-    />
     <EducationLoanModal 
       open={educationLoanModalOpen} 
       onClose={() => setEducationLoanModalOpen(false)} 
@@ -549,6 +550,14 @@ export default function AISection(props) {
     <RealEstateModal 
       open={realEstateModalOpen} 
       onClose={() => setRealEstateModalOpen(false)} 
+    />
+    <MachineryLoanModal 
+      open={machineryLoanModalOpen} 
+      onClose={() => setMachineryLoanModalOpen(false)} 
+    />
+    <LRDLoanModal 
+      open={lrdLoanModalOpen} 
+      onClose={() => setLrdLoanModalOpen(false)} 
     />
     </>
   );

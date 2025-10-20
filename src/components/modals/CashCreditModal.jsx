@@ -99,7 +99,7 @@ const CashCreditModal = ({ open, onClose }) => {
   
   const keyFeatures = [
     'Purpose: To meet short-term working capital requirements',
-    'Security: Hypothecation of stock, inventory, or receivables',
+    'Security: Hypothecation of stock, inventory, or receivables and Property',
     'Interest: Charged only on the amount utilized',
     'Tenure: Typically reviewed and renewed every 12 months',
     'Flexibility: Funds can be withdrawn and deposited multiple times within the limit'
@@ -153,7 +153,7 @@ const CashCreditModal = ({ open, onClose }) => {
       <StyledDialogTitle>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Typography variant="h4" sx={{ fontWeight: 800, color: 'inherit' }}>
-            Cash Credit
+            Working Capital - Cash Credit/Overdraft
           </Typography>
           <IconButton onClick={onClose} sx={{ color: 'white' }}>
             <CloseIcon />
@@ -166,10 +166,10 @@ const CashCreditModal = ({ open, onClose }) => {
           {/* Left Column - Content */}
           <Grid item xs={12} md={7}>
             <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.8, fontSize: '1.1rem' }}>
-              A Cash Credit (CC) facility is a short-term working capital loan provided by banks to
-              businesses and traders to meet their day-to-day operational expenses such as purchasing
-              raw materials, paying salaries, or managing inventory. It is a secured credit facility, usually
-              backed by stock, inventory, or receivables as collateral.
+              A Working Capital facility is a short-term capital loan provided by banks to businesses
+              and traders to meet their day-to-day operational expenses such as purchasing raw
+              materials, paying salaries, or managing inventory. It is a secured credit facility, usually
+              backed by stock, Property, inventory, or receivables as collateral.
             </Typography>
 
             <Typography variant="body1" sx={{ mb: 4, lineHeight: 1.8, fontSize: '1.1rem' }}>

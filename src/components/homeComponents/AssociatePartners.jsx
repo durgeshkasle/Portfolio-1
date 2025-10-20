@@ -17,7 +17,7 @@ const PartnersContainer = styled(Box)(({ theme }) => ({
   marginLeft: 'calc(-50vw + 50%)',
   marginRight: 'calc(-50vw + 50%)',
   maxWidth: 'none',
-  
+
   '&::before': {
     content: '""',
     position: 'absolute',
@@ -25,7 +25,8 @@ const PartnersContainer = styled(Box)(({ theme }) => ({
     left: 0,
     right: 0,
     bottom: 0,
-    background: 'radial-gradient(circle at 20% 50%, rgba(202, 175, 92, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(202, 175, 92, 0.05) 0%, transparent 50%)',
+    background:
+      'radial-gradient(circle at 20% 50%, rgba(202, 175, 92, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(202, 175, 92, 0.05) 0%, transparent 50%)',
     pointerEvents: 'none',
   },
 
@@ -76,29 +77,77 @@ const ViewAllButton = styled(Button)(({ theme }) => ({
 
 // ===== Partner Data =====
 const allPartners = [
-  'IDFC FIRST Bank', 'Aditya Birla Capital', 'TATA CAPITAL Housing Finance', 'TATA CAPITAL',
-  'IIFL', 'Indiabulls', 'Piramal Finance', 'SHRIRAM City',
-  'U GRO CAPITAL', 'POONAWALLA FINCORP', 'VASTU HOUSING FINANCE', 'SUNDARAM FINANCE',
-  'DBS', 'SBI', 'ARKA FINCAP', 'Aavishkaar Group',
-  'BAJAJ HOUSING FINANCE', 'CREDIT SAISON INDIA', 'Equitas', 'ftcash',
-  'HINDUJA HOUSING FINANCE', 'indifi', 'Inditrade', 'JM Financial',
-  'InCred Finance', 'LIC HFL', 'LOAN WIRED', 'Mahindra Finance',
-  'MAS Financial Services', 'Money Wide', 'NAVI', 'PROFECTUS CAPITAL',
-  'Protium', 'POONAWALLA HOUSING FINANCE', 'Saraswat Bank', 'SBM Bank',
-  'Shinhan Bank', 'SIDBI', 'SMC Finance', 'SURYODAY',
-  'TEZZRACT', 'Unity Small Finance Bank', 'L&T Finance', 'Utkarsh Small Finance Bank',
-  'TRU', 'TVS CREDIT', 'YES BANK', 'SMFG IndiaCredit',
-  'CLIX', 'Capri Loans', 'AVANSE', 'MOTILAL OSWAL',
-  'KreditBee', 'DMI Finance', 'fibe', 'HDFC BANK',
-  'BHANGI FINANCE', 'Motilal Oswal Home Finance', 'ADITYA BIRLA CAPITAL HOME LOANS', 'DCB BANK',
-  'DMI HOUSING FINANCE', 'Aavas', 'AU Small Finance Bank', 'Bajaj Finserv'
+  'IDFC FIRST Bank',
+  'Aditya Birla Capital',
+  'TATA CAPITAL Housing Finance',
+  'TATA CAPITAL',
+  'IIFL',
+  'Indiabulls',
+  'Piramal Finance',
+  'SHRIRAM City',
+  'U GRO CAPITAL',
+  'POONAWALLA FINCORP',
+  'VASTU HOUSING FINANCE',
+  'SUNDARAM FINANCE',
+  'DBS',
+  'SBI',
+  'ARKA FINCAP',
+  'Aavishkaar Group',
+  'BAJAJ HOUSING FINANCE',
+  'CREDIT SAISON INDIA',
+  'Equitas',
+  'ftcash',
+  'HINDUJA HOUSING FINANCE',
+  'indifi',
+  'Inditrade',
+  'JM Financial',
+  'InCred Finance',
+  'LIC HFL',
+  'LOAN WIRED',
+  'Mahindra Finance',
+  'MAS Financial Services',
+  'Money Wide',
+  'NAVI',
+  'PROFECTUS CAPITAL',
+  'Protium',
+  'POONAWALLA HOUSING FINANCE',
+  'Saraswat Bank',
+  'SBM Bank',
+  'Shinhan Bank',
+  'SIDBI',
+  'SMC Finance',
+  'SURYODAY',
+  'TEZZRACT',
+  'Unity Small Finance Bank',
+  'L&T Finance',
+  'Utkarsh Small Finance Bank',
+  'TRU',
+  'TVS CREDIT',
+  'YES BANK',
+  'SMFG IndiaCredit',
+  'CLIX',
+  'Capri Loans',
+  'AVANSE',
+  'MOTILAL OSWAL',
+  'KreditBee',
+  'DMI Finance',
+  'fibe',
+  'HDFC BANK',
+  'BHANGI FINANCE',
+  'Motilal Oswal Home Finance',
+  'ADITYA BIRLA CAPITAL HOME LOANS',
+  'DCB BANK',
+  'DMI HOUSING FINANCE',
+  'Aavas',
+  'AU Small Finance Bank',
+  'Bajaj Finserv',
 ];
 
 // ===== Component =====
 export default function AssociatePartners() {
   const theme = useTheme();
   const [showAll, setShowAll] = useState(false);
-  
+
   const displayedPartners = showAll ? allPartners : allPartners.slice(0, 8);
 
   const handleToggleShowAll = () => {
@@ -107,18 +156,22 @@ export default function AssociatePartners() {
 
   return (
     <PartnersContainer id="associate-partners">
-      <Box sx={{ 
-        width: '100%',
-        maxWidth: '1400px',
-        margin: '0 auto',
-        padding: theme.spacing(0, 4),
-        position: 'relative',
-        zIndex: 2,
-        [theme.breakpoints.down('md')]: {
-          padding: theme.spacing(0, 2),
-        },
-      }}>
-        <Box sx={{ position: 'relative', zIndex: 2, mb: 6, textAlign: { xs: 'center', md: 'left' } }}>
+      <Box
+        sx={{
+          width: '100%',
+          maxWidth: '1400px',
+          margin: '0 auto',
+          padding: theme.spacing(0, 4),
+          position: 'relative',
+          zIndex: 2,
+          [theme.breakpoints.down('md')]: {
+            padding: theme.spacing(0, 2),
+          },
+        }}
+      >
+        <Box
+          sx={{ position: 'relative', zIndex: 2, mb: 6, textAlign: { xs: 'center', md: 'left' } }}
+        >
           <Typography
             variant="h2"
             sx={{
@@ -135,7 +188,7 @@ export default function AssociatePartners() {
           >
             Associate Partners
           </Typography>
-          
+
           <Typography
             variant="h6"
             sx={{
@@ -152,27 +205,42 @@ export default function AssociatePartners() {
         </Box>
 
         {/* Partners Grid */}
-        <Grid container spacing={3} sx={{ 
-          mb: 4,
-          '& .MuiGrid-item': {
-            display: 'flex',
-            justifyContent: 'center',
-          }
-        }}>
+        <Grid
+          container
+          spacing={3}
+          sx={{
+            mb: 4,
+            marginLeft: { xs: 0, md: '4%' },
+            '& .MuiGrid-item': {
+              display: 'flex',
+              justifyContent: 'center',
+            },
+          }}
+        >
           {displayedPartners.map((partner, index) => (
-            <Grid item xs={12} sm={6} md={3} lg={3} key={index} sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={3}
+              lg={3}
+              key={index}
+              sx={{ display: 'flex', justifyContent: 'center' }}
+            >
               <PartnerCard>
-                <CardContent sx={{ 
-                  p: 2,
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  textAlign: 'center',
-                  height: '100%',
-                  width: '100%',
-                  boxSizing: 'border-box',
-                }}>
+                <CardContent
+                  sx={{
+                    p: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    textAlign: 'center',
+                    height: '100%',
+                    width: '100%',
+                    boxSizing: 'border-box',
+                  }}
+                >
                   <Typography
                     variant="h6"
                     sx={{
@@ -199,15 +267,10 @@ export default function AssociatePartners() {
 
         {/* View All Button */}
         <Box sx={{ textAlign: 'center' }}>
-          <ViewAllButton
-            onClick={handleToggleShowAll}
-            variant="contained"
-            size="large"
-          >
+          <ViewAllButton onClick={handleToggleShowAll} variant="contained" size="large">
             {showAll ? 'VIEW LESS' : 'VIEW ALL'}
           </ViewAllButton>
         </Box>
-
       </Box>
     </PartnersContainer>
   );

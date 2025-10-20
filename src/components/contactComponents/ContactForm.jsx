@@ -1,9 +1,12 @@
 import React from 'react';
-import { Box, Button, CircularProgress, useTheme, Typography, Chip } from '@mui/material';
+import { Box, Button, CircularProgress, useTheme, Typography, Chip, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Controller } from 'react-hook-form';
 import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
 
 // ===== Styled Components =====
 const StyledTextField = styled(TextField)(({ theme }) => ({
@@ -72,6 +75,45 @@ const StyledChip = styled(Chip)(({ theme }) => ({
   },
 }));
 
+const CompanyInfoContainer = styled(Box)(({ theme }) => ({
+  backgroundColor: theme.palette.background.paper,
+  padding: theme.spacing(4),
+  borderRadius: '16px',
+  boxShadow: theme.shadows[4],
+  transition: 'all 0.3s ease',
+  height: 'fit-content',
+  // '&:hover': {
+  //   transform: 'translateY(-8px)',
+  //   boxShadow: theme.shadows[8],
+  //   border: `1px solid ${theme.palette.primary.light}`,
+  // },
+}));
+
+const ContactInfoItem = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'flex-start',
+  gap: theme.spacing(2),
+  mb: theme.spacing(3),
+  '&:last-child': {
+    mb: 0,
+  },
+}));
+
+const ContactIcon = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '40px',
+  height: '40px',
+  borderRadius: '50%',
+  backgroundColor: theme.palette.primary.main,
+  color: 'white',
+  flexShrink: 0,
+  '& .MuiSvgIcon-root': {
+    fontSize: '20px',
+  },
+}));
+
 // ===== Component =====
 export default function ContactForm({
   control,
@@ -84,36 +126,112 @@ export default function ContactForm({
   const theme = useTheme();
 
   return (
-    <Box textAlign="center">
-      {/* ===== Form Section ===== */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-        >
-          <Box
-            component="form"
-            ref={formRef}
-            onSubmit={handleSubmit(onSubmit)}
-            sx={{
-              backgroundColor: theme.palette.background.paper,
-              p: { xs: 3, sm: 4 },
-              borderRadius: '16px',
-              maxWidth: '700px',
-              margin: 'auto',
-              boxShadow: theme.shadows[4],
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                transform: 'translateY(-8px)',
-                boxShadow: theme.shadows[8],
-                border: `1px solid ${theme.palette.primary.light}`,
-              },
-            }}
+    <Box sx={{ maxWidth: '1200px', margin: 'auto' }}>
+      <Box sx={{ 
+        display: 'flex', 
+        gap: 4, 
+        alignItems: 'flex-start',
+        flexDirection: { xs: 'column', md: 'row' }
+      }}>
+        {/* ===== Company Information Section (Left) ===== */}
+        <Box sx={{ flex: { xs: '1', md: '0 0 40%' } }}>
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4 }}
           >
-            <Box sx={{ textAlign: 'center', mb: 2 }}>
-              <Typography variant="h3">Send Message</Typography>
-              <Typography>Let's discuss your next project</Typography>
-            </Box>
+            <CompanyInfoContainer>
+              <Box sx={{ textAlign: 'left', mb: 4 }}>
+                <Typography 
+                  variant="h3" 
+                  sx={{ 
+                    color: theme.palette.primary.main,
+                    fontWeight: 800,
+                    mb: 1
+                  }}
+                >
+                  Dream Finance
+                </Typography>
+                <Typography variant="h6" sx={{ color: 'text.secondary' }}>
+                  Your Trusted Financial Partner
+                </Typography>
+              </Box>
+
+              <ContactInfoItem>
+                <ContactIcon>
+                  <LocationOnIcon />
+                </ContactIcon>
+                <Box>
+                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                    Office Address
+                  </Typography>
+                  <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.6,mb:4 }}>
+                    Shop No 23, Ground floor, Evershine Mall,<br />
+                    Chincholi Bundar Signal, Malad West -<br />
+                    Mumbai 400 062
+                  </Typography>
+                </Box>
+              </ContactInfoItem>
+
+              <ContactInfoItem>
+                <ContactIcon>
+                  <EmailIcon />
+                </ContactIcon>
+                <Box>
+                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                    Email ID
+                  </Typography>
+                  <Typography variant="body1" sx={{ color: 'text.secondary',mb:4 }}>
+                    dreamfinance202324@gmail.com
+                  </Typography>
+                </Box>
+              </ContactInfoItem>
+
+              <ContactInfoItem>
+                <ContactIcon>
+                  <PhoneIcon />
+                </ContactIcon>
+                <Box>
+                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                    Contact No
+                  </Typography>
+                  <Typography variant="body1" sx={{ color: 'text.secondary' }}>
+                    8976437111
+                  </Typography>
+                </Box>
+              </ContactInfoItem>
+            </CompanyInfoContainer>
+          </motion.div>
+        </Box>
+
+        {/* ===== Form Section (Right) ===== */}
+        <Box sx={{ flex: { xs: '1', md: '0 0 60%' } }}>
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+          >
+            <Box
+              component="form"
+              ref={formRef}
+              onSubmit={handleSubmit(onSubmit)}
+              sx={{
+                backgroundColor: theme.palette.background.paper,
+                p: { xs: 3, sm: 4 },
+                borderRadius: '16px',
+                boxShadow: theme.shadows[4],
+                transition: 'all 0.3s ease',
+                // '&:hover': {
+                //   transform: 'translateY(-8px)',
+                //   boxShadow: theme.shadows[8],
+                //   border: `1px solid ${theme.palette.primary.light}`,
+                // },
+              }}
+            >
+              <Box sx={{ textAlign: 'center', mb: 3 }}>
+                <Typography variant="h3">Send Message</Typography>
+                <Typography>Let's discuss your financial needs</Typography>
+              </Box>
 
             <Box sx={{ display: 'flex', justifyContent: 'space-around', gap: '15px' }}>
               <Controller
@@ -198,13 +316,15 @@ export default function ContactForm({
               {isLoading ? <CircularProgress size={24} sx={{ color: 'white' }} /> : 'Send Message'}
             </StyledButton>
 
-            <ChipBox>
-              {chips.map((chip, index) => (
-                <StyledChip key={index} icon={chip.icon} label={chip.label} />
-              ))}
-            </ChipBox>
-          </Box>
-        </motion.div>
+              <ChipBox>
+                {chips.map((chip, index) => (
+                  <StyledChip key={index} icon={chip.icon} label={chip.label} />
+                ))}
+              </ChipBox>
+            </Box>
+          </motion.div>
+        </Box>
+      </Box>
     </Box>
   );
 }
