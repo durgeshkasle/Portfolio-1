@@ -17,6 +17,9 @@ import ListItemButton from '@mui/material/ListItemButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import Collapse from '@mui/material/Collapse';
 import HomeIcon from '@mui/icons-material/Home';
 import BusinessIcon from '@mui/icons-material/Business';
 import PersonIcon from '@mui/icons-material/Person';
@@ -124,6 +127,7 @@ const Header = () => {
   const location = useLocation();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [financeMenuAnchor, setFinanceMenuAnchor] = useState(null);
+  const [mobileFinanceExpanded, setMobileFinanceExpanded] = useState(false);
   const [currentPath, setCurrentPath] = useState(location.pathname);
 
   // Sync currentPath with actual route changes
@@ -165,6 +169,10 @@ const Header = () => {
 
   const handleFinanceMenuClose = () => {
     setFinanceMenuAnchor(null);
+  };
+
+  const handleMobileFinanceToggle = () => {
+    setMobileFinanceExpanded(!mobileFinanceExpanded);
   };
 
   const handleFinanceClick = (event) => {
@@ -366,6 +374,97 @@ const Header = () => {
           {menuItems.map((item) => {
             // Handle both exact path match and root path redirect to home
             const isActive = currentPath === item.path || (item.path === '/home' && currentPath === '/');
+            
+            if (item.hasDropdown) {
+              return (
+                <React.Fragment key={item.label}>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={handleMobileFinanceToggle}
+                      sx={{
+                        backgroundColor: isActive ? 'rgba(255,255,255,0.1)' : 'transparent',
+                        borderLeft: isActive
+                          ? `3px solid ${theme.palette.primary.main}`
+                          : '3px solid transparent',
+                      }}
+                    >
+                      <ListItemText
+                        primary={item.label}
+                        primaryTypographyProps={{
+                          fontWeight: isActive ? 700 : 500,
+                          textAlign: 'center',
+                          color: isActive ? theme.palette.primary.main : theme.palette.text.primary,
+                        }}
+                      />
+                      {mobileFinanceExpanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                    </ListItemButton>
+                  </ListItem>
+                  
+                  <Collapse in={mobileFinanceExpanded} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                      {financeMenuItems.map((financeItem) => (
+                        <ListItem key={financeItem.label} disablePadding>
+                          <ListItemButton
+                            onClick={() => {
+                              handleMenuItemClick(financeItem.modal);
+                              setDrawerOpen(false);
+                              setMobileFinanceExpanded(false);
+                            }}
+                            sx={{
+                              pl: 4,
+                              backgroundColor: 'rgba(202, 175, 92, 0.05)',
+                              '&:hover': {
+                                backgroundColor: 'rgba(202, 175, 92, 0.1)',
+                              },
+                            }}
+                          >
+                            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, width: '100%' }}>
+                              {financeItem.icon}
+                              <ListItemText
+                                primary={financeItem.label}
+                                primaryTypographyProps={{
+                                  fontSize: '0.9rem',
+                                  color: theme.palette.text.primary,
+                                }}
+                              />
+                            </Box>
+                          </ListItemButton>
+                        </ListItem>
+                      ))}
+                    </List>
+                  </Collapse>
+                </React.Fragment>
+              );
+            }
+            
+            if (item.hasModal) {
+              return (
+                <ListItem key={item.label} disablePadding>
+                  <ListItemButton
+                    onClick={() => {
+                      handleRealEstateClick({ preventDefault: () => {} });
+                      setDrawerOpen(false);
+                    }}
+                    sx={{
+                      backgroundColor: isActive ? 'rgba(255,255,255,0.1)' : 'transparent',
+                      borderLeft: isActive
+                        ? `3px solid ${theme.palette.primary.main}`
+                        : '3px solid transparent',
+                    }}
+                  >
+                    <ListItemText
+                      primary={item.label}
+                      primaryTypographyProps={{
+                        fontWeight: isActive ? 700 : 500,
+                        textAlign: 'center',
+                        color: isActive ? theme.palette.primary.main : theme.palette.text.primary,
+                      }}
+                    />
+                  </ListItemButton>
+                </ListItem>
+              );
+            }
+            
             return (
               <ListItem key={item.label} disablePadding>
                 <ListItemButton
