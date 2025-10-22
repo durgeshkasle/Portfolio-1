@@ -25,6 +25,7 @@ import BuildIcon from '@mui/icons-material/Build';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import { useNavigate } from 'react-router-dom';
 
 // Import image
 import homeImage from '../../assets/images/homeImages/home-images.jpeg';
@@ -92,6 +93,7 @@ const ContactButton = styled(Button)(({ theme }) => ({
 }));
 
 const BusinessLoanModal = ({ open, onClose }) => {
+  const navigate = useNavigate();
   const theme = useTheme();
   
   const loanFeatures = [
@@ -136,6 +138,10 @@ const BusinessLoanModal = ({ open, onClose }) => {
       default:
         return <BusinessIcon sx={{ color: theme.palette.primary.main, fontSize: '1.2rem' }} />;
     }
+  };
+
+  const handleContactUs = () => {
+    navigate('/contact');
   };
 
   return (
@@ -278,10 +284,7 @@ const BusinessLoanModal = ({ open, onClose }) => {
       <DialogActions sx={{ padding: 3, justifyContent: 'center' }}>
         <ContactButton
           startIcon={<ContactPhoneIcon />}
-          onClick={() => {
-            // Navigate to contact page or open contact form
-            window.location.href = '/contact';
-          }}
+          onClick={handleContactUs}
           size="large"
         >
           Contact Us Today

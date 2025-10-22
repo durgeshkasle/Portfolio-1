@@ -30,6 +30,7 @@ import SecurityIcon from '@mui/icons-material/Security';
 import ScheduleIcon from '@mui/icons-material/Schedule';
 import SpeedIcon from '@mui/icons-material/Speed';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import { useNavigate } from 'react-router-dom';
 
 // Import image
 import homeImage from '../../assets/images/homeImages/home-images.jpeg';
@@ -97,6 +98,7 @@ const ContactButton = styled(Button)(({ theme }) => ({
 }));
 
 const OverdraftModal = ({ open, onClose }) => {
+  const navigate = useNavigate();
   const theme = useTheme();
   
   const keyFeatures = [
@@ -295,8 +297,7 @@ const OverdraftModal = ({ open, onClose }) => {
         <ContactButton
           startIcon={<ContactPhoneIcon />}
           onClick={() => {
-            // Navigate to contact page or open contact form
-            window.location.href = '/contact';
+            navigate('/contact');
           }}
           size="large"
         >

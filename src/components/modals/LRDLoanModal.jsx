@@ -13,7 +13,9 @@ import {
   Chip,
   Paper,
 } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
+import { useNavigate } from 'react-router-dom';
+import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 
 const StyledDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialog-paper': {
@@ -49,7 +51,24 @@ const FeatureBox = styled(Paper)(({ theme }) => ({
   margin: theme.spacing(1, 0),
 }));
 
+const ContactButton = styled(Button)(({ theme }) => ({
+  background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.light} 100%)`,
+  color: 'white',
+  padding: '12px 24px',
+  borderRadius: '25px',
+  fontWeight: 600,
+  textTransform: 'none',
+  fontSize: '1.1rem',
+  '&:hover': {
+    background: `linear-gradient(135deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.main} 100%)`,
+    transform: 'translateY(-2px)',
+  },
+  transition: 'all 0.3s ease',
+}));
+
 const LRDLoanModal = ({ open, onClose }) => {
+  const navigate = useNavigate();
+  const theme = useTheme();
   const keyFeatures = [
     'Loan against regular rental income from leased property',
     'Long tenure and flexible repayment options',
@@ -206,26 +225,14 @@ const LRDLoanModal = ({ open, onClose }) => {
         </Box>
       </DialogContent>
 
-      <DialogActions sx={{ p: 3, borderTop: '1px solid rgba(202, 175, 92, 0.2)' }}>
-        <Button
-          onClick={onClose}
-          variant="contained"
-          sx={{
-            background: 'linear-gradient(135deg, #CAAF5C 0%, #D4C070 100%)',
-            color: '#000',
-            fontWeight: 600,
-            px: 4,
-            py: 1,
-            borderRadius: '25px',
-            '&:hover': {
-              background: 'linear-gradient(135deg, #D4C070 0%, #CAAF5C 100%)',
-              transform: 'translateY(-2px)',
-              boxShadow: '0 8px 25px rgba(202, 175, 92, 0.4)',
-            },
-          }}
+      <DialogActions sx={{ padding: 3, justifyContent: 'center' }}>
+        <ContactButton
+          startIcon={<ContactPhoneIcon />}
+          onClick={() => navigate('/contact')}
+          size="large"
         >
-          Close
-        </Button>
+          Contact Us Today
+        </ContactButton>
       </DialogActions>
     </StyledDialog>
   );

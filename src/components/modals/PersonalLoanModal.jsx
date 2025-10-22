@@ -26,6 +26,7 @@ import FlightIcon from '@mui/icons-material/Flight';
 import SchoolIcon from '@mui/icons-material/School';
 import HomeIcon from '@mui/icons-material/Home';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import { useNavigate } from 'react-router-dom';
 
 // Import image
 import homeImage from '../../assets/images/homeImages/home-images.jpeg';
@@ -93,6 +94,7 @@ const ContactButton = styled(Button)(({ theme }) => ({
 }));
 
 const PersonalLoanModal = ({ open, onClose }) => {
+  const navigate = useNavigate();
   const theme = useTheme();
   
   const keyFeatures = [
@@ -276,8 +278,7 @@ const PersonalLoanModal = ({ open, onClose }) => {
         <ContactButton
           startIcon={<ContactPhoneIcon />}
           onClick={() => {
-            // Navigate to contact page or open contact form
-            window.location.href = '/contact';
+            navigate('/contact');
           }}
           size="large"
         >

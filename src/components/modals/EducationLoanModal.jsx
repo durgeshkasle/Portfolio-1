@@ -30,6 +30,7 @@ import AccessibleIcon from '@mui/icons-material/Accessible';
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
+import { useNavigate } from 'react-router-dom';
 
 // Import image
 import homeImage from '../../assets/images/homeImages/home-images.jpeg';
@@ -97,6 +98,7 @@ const ContactButton = styled(Button)(({ theme }) => ({
 }));
 
 const EducationLoanModal = ({ open, onClose }) => {
+  const navigate = useNavigate();
   const theme = useTheme();
   
   const keyFeatures = [
@@ -295,8 +297,7 @@ const EducationLoanModal = ({ open, onClose }) => {
         <ContactButton
           startIcon={<ContactPhoneIcon />}
           onClick={() => {
-            // Navigate to contact page or open contact form
-            window.location.href = '/contact';
+            navigate('/contact');
           }}
           size="large"
         >

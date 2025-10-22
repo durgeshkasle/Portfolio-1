@@ -22,6 +22,7 @@ import BusinessIcon from '@mui/icons-material/Business';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import HomeIcon from '@mui/icons-material/Home';
 import WorkIcon from '@mui/icons-material/Work';
+import { useNavigate } from 'react-router-dom';
 
 // Import image
 import homeImage from '../../assets/images/homeImages/home-images.jpeg';
@@ -89,6 +90,7 @@ const ContactButton = styled(Button)(({ theme }) => ({
 }));
 
 const LoanAgainstPropertyModal = ({ open, onClose }) => {
+  const navigate = useNavigate();
   const theme = useTheme();
   
   const features = [
@@ -245,8 +247,7 @@ const LoanAgainstPropertyModal = ({ open, onClose }) => {
         <ContactButton
           startIcon={<ContactPhoneIcon />}
           onClick={() => {
-            // Navigate to contact page or open contact form
-            window.location.href = '/contact';
+            navigate('/contact');
           }}
           size="large"
         >

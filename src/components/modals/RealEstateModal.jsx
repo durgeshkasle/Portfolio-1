@@ -27,6 +27,7 @@ import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import SecurityIcon from '@mui/icons-material/Security';
 import PeopleIcon from '@mui/icons-material/People';
+import { useNavigate } from 'react-router-dom';
 
 // Import image
 import realEstateImage from '../../assets/images/homeImages/real.jpeg';
@@ -95,6 +96,7 @@ const ContactButton = styled(Button)(({ theme }) => ({
 }));
 
 const RealEstateModal = ({ open, onClose }) => {
+  const navigate = useNavigate();
   const theme = useTheme();
 
   const keyTypes = [
@@ -340,7 +342,7 @@ const RealEstateModal = ({ open, onClose }) => {
         <ContactButton
           onClick={() => {
             onClose();
-            window.location.href = '/contact';
+            navigate('/contact');
           }}
           size="large"
         >

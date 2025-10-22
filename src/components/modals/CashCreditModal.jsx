@@ -28,6 +28,7 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import SecurityIcon from '@mui/icons-material/Security';
 import ScheduleIcon from '@mui/icons-material/Schedule';
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
+import { useNavigate } from 'react-router-dom';
 
 // Import image
 import homeImage from '../../assets/images/homeImages/home-images.jpeg';
@@ -95,6 +96,7 @@ const ContactButton = styled(Button)(({ theme }) => ({
 }));
 
 const CashCreditModal = ({ open, onClose }) => {
+  const navigate = useNavigate();
   const theme = useTheme();
   
   const keyFeatures = [
@@ -283,8 +285,7 @@ const CashCreditModal = ({ open, onClose }) => {
         <ContactButton
           startIcon={<ContactPhoneIcon />}
           onClick={() => {
-            // Navigate to contact page or open contact form
-            window.location.href = '/contact';
+            navigate('/contact');
           }}
           size="large"
         >
