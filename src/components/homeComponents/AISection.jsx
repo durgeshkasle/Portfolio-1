@@ -332,7 +332,7 @@ export default function AISection(props) {
             mb: 4,
           }}
         >
-          Dream Finance
+          Dream Finance and Real Estate
         </BlinkingLabel>
 
         <Typography 

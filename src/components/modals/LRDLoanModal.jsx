@@ -228,7 +228,10 @@ const LRDLoanModal = ({ open, onClose }) => {
       <DialogActions sx={{ padding: 3, justifyContent: 'center' }}>
         <ContactButton
           startIcon={<ContactPhoneIcon />}
-          onClick={() => navigate('/contact')}
+          onClick={() => {
+            onClose();
+            navigate('/contact');
+          }}
           size="large"
         >
           Contact Us Today

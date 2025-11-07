@@ -245,7 +245,7 @@ const Header = () => {
               src={dreamLogo}
               alt="Dream Finance Logo"
             />
-            <Typography sx={{color:"#CAAF5C",fontSize:"25px",mt:"3px",ml:"2px"}}>Dream Finance</Typography>
+            <Typography sx={{color:"#CAAF5C",fontSize:"25px",mt:"3px",ml:"2px",fontWeight:600}}>Dream Finance and Real Estate</Typography>
           </Box>
 
           {/* === Desktop Menu === */}

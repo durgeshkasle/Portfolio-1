@@ -219,7 +219,7 @@ export default function AboutIntroduction() {
               mb: 4,
             }}
           >
-            Dream Finance is a proprietorship firm established in March 2023 and office at Malad West, Mumbai. We specialize in providing comprehensive financial solutions through a wide range of loan products tailored to meet the diverse needs of individuals and businesses.
+            Dream Finance is a proprietorship firm founded by <Box component="span" sx={{ color: theme.palette.primary.main, fontWeight: 600 }}>Uma Sharma</Box>, established in March 2023 and office at Malad West, Mumbai. We specialize in providing comprehensive financial solutions through a wide range of loan products tailored to meet the diverse needs of individuals and businesses.
           </Typography>
 
           <Typography

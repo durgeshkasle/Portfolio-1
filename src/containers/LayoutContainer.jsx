@@ -2,6 +2,8 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import '../App.css';
 import LayoutHeader from '../components/layoutComponents/Header';
+import Footer from '../components/layoutComponents/Footer';
+import FloatingWhatsApp from '../components/commonComponents/FloatingWhatsApp';
 
 export const PublicLayout = () => {
   return (
@@ -14,6 +16,8 @@ export const PublicLayout = () => {
       <div className="container">
         <Outlet />
       </div>
+      <Footer />
+      <FloatingWhatsApp />
     </main>
   );
 };
@@ -46,6 +50,9 @@ export const PrivateLayout = () => {
           <Outlet />
         </main>
       </div>
+      
+      <Footer />
+      <FloatingWhatsApp />
     </>
   );
 };

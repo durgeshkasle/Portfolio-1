@@ -285,6 +285,7 @@ const CashCreditModal = ({ open, onClose }) => {
         <ContactButton
           startIcon={<ContactPhoneIcon />}
           onClick={() => {
+            onClose();
             navigate('/contact');
           }}
           size="large"

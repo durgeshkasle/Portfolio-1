@@ -8,7 +8,9 @@ import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 
 // About Module Pages ;-
 import AboutHero from '../components/aboutComponents/AboutHero';
+import FounderSection from '../components/aboutComponents/FounderSection';
 import AboutIntroduction from '../components/aboutComponents/AboutIntroduction';
+import DetailedResponsibilities from '../components/aboutComponents/DetailedResponsibilities';
 import AboutResponsibilities from '../components/aboutComponents/AboutResponsibilities';
 
 const AboutContainer = () => {
@@ -35,8 +37,10 @@ const AboutContainer = () => {
   return (
     <>
       <AboutHero />
+      <FounderSection />
       <AboutIntroduction />
       <AboutResponsibilities stats={stats}/>
+      <DetailedResponsibilities />
     </>
   );
 };

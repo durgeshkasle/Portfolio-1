@@ -141,6 +141,7 @@ const BusinessLoanModal = ({ open, onClose }) => {
   };
 
   const handleContactUs = () => {
+    onClose();
     navigate('/contact');
   };
 

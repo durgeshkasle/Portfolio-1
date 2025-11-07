@@ -19,18 +19,11 @@ import { styled, useTheme } from '@mui/material/styles';
 import CloseIcon from '@mui/icons-material/Close';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import BusinessIcon from '@mui/icons-material/Business';
-import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import HomeIcon from '@mui/icons-material/Home';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import DescriptionIcon from '@mui/icons-material/Description';
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import SecurityIcon from '@mui/icons-material/Security';
-import PeopleIcon from '@mui/icons-material/People';
 import { useNavigate } from 'react-router-dom';
-
-// Import image
-import realEstateImage from '../../assets/images/homeImages/real.jpeg';
 
 // Styled Components
 const StyledDialog = styled(Dialog)(({ theme }) => ({
@@ -124,65 +117,6 @@ const RealEstateModal = ({ open, onClose }) => {
       icon: <DescriptionIcon sx={{ color: theme.palette.error.main }} />,
       title: 'Legal & Documentation Support',
       description: 'Handling property registration, title verification, and agreement drafting.'
-    }
-  ];
-
-  const responsibilities = [
-    {
-      icon: <PeopleIcon sx={{ color: theme.palette.primary.main }} />,
-      title: 'Lead Generation',
-      items: [
-        'Identify and approach potential customers interested in financial products like personal loans, business loans, home loans, etc.',
-        'Build and maintain a strong customer network.'
-      ]
-    },
-    {
-      icon: <SecurityIcon sx={{ color: theme.palette.success.main }} />,
-      title: 'Compliance & Confidentiality',
-      items: [
-        'Follow all regulatory and company guidelines.',
-        'Maintain strict confidentiality of customer data and financial information.'
-      ]
-    },
-    {
-      icon: <ContactPhoneIcon sx={{ color: theme.palette.info.main }} />,
-      title: 'Customer Interaction',
-      items: [
-        'Explain loan products, eligibility criteria, interest rates, and terms to clients.',
-        'Guide customers in selecting the right financial product based on their needs.'
-      ]
-    },
-    {
-      icon: <DescriptionIcon sx={{ color: theme.palette.warning.main }} />,
-      title: 'Document Collection & Verification',
-      items: [
-        'Collect required documents such as KYC, income proof, and bank statements.',
-        'Ensure all submitted documents are accurate and complete before forwarding to the lender.'
-      ]
-    },
-    {
-      icon: <BusinessIcon sx={{ color: theme.palette.error.main }} />,
-      title: 'Application Processing',
-      items: [
-        'Submit loan applications to the respective bank or NBFC for evaluation.',
-        'Track application status and ensure timely updates for clients.'
-      ]
-    },
-    {
-      icon: <AccountBalanceIcon sx={{ color: theme.palette.primary.main }} />,
-      title: 'Coordination with Financial Institutions',
-      items: [
-        'Act as a link between the customer and the bank or NBFC.',
-        'Assist in clarifying queries raised by the lender during the verification process.'
-      ]
-    },
-    {
-      icon: <SupportAgentIcon sx={{ color: theme.palette.success.main }} />,
-      title: 'Customer Support',
-      items: [
-        'Help clients through each stage — from application to disbursement.',
-        'Provide post-loan support and maintain long-term relationships.'
-      ]
     }
   ];
 
@@ -296,45 +230,6 @@ const RealEstateModal = ({ open, onClose }) => {
             </FeatureCard>
           </Grid>
 
-          {/* Responsibilities Section */}
-          <Grid item xs={12}>
-            <Typography variant="h5" sx={{ color: theme.palette.primary.main, mb: 3, fontWeight: 700 }}>
-              Responsibilities
-            </Typography>
-            <Grid container spacing={2}>
-              {responsibilities.map((responsibility, index) => (
-                <Grid item xs={12} md={6} key={index}>
-                  <FeatureCard>
-                    <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
-                      {responsibility.icon}
-                      <Box>
-                        <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
-                          {index + 1}. {responsibility.title}
-                        </Typography>
-                        <List dense>
-                          {responsibility.items.map((item, itemIndex) => (
-                            <ListItem key={itemIndex} sx={{ px: 0, py: 0.5 }}>
-                              <ListItemIcon sx={{ minWidth: '20px' }}>
-                                <Typography sx={{ color: theme.palette.primary.main }}>o</Typography>
-                              </ListItemIcon>
-                              <ListItemText 
-                                primary={item}
-                                primaryTypographyProps={{ 
-                                  color: 'white', 
-                                  fontSize: '0.9rem',
-                                  lineHeight: 1.4
-                                }}
-                              />
-                            </ListItem>
-                          ))}
-                        </List>
-                      </Box>
-                    </Box>
-                  </FeatureCard>
-                </Grid>
-              ))}
-            </Grid>
-          </Grid>
         </Grid>
       </StyledDialogContent>
 

@@ -150,10 +150,10 @@ export default function ContactForm({
                     mb: 1
                   }}
                 >
-                  Dream Finance
+                  Dream Finance and Real Estate
                 </Typography>
                 <Typography variant="h6" sx={{ color: 'text.secondary' }}>
-                  Your Trusted Financial Partner
+                  Your Trusted Financial Partner and Real Estate Services Provider
                 </Typography>
               </Box>
 
@@ -182,7 +182,7 @@ export default function ContactForm({
                     Email ID
                   </Typography>
                   <Typography variant="body1" sx={{ color: 'text.secondary',mb:4 }}>
-                    dreamfinance202324@gmail.com
+                    dreamfinanceandrealestate@gmail.com
                   </Typography>
                 </Box>
               </ContactInfoItem>
@@ -195,8 +195,11 @@ export default function ContactForm({
                   <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
                     Contact No
                   </Typography>
-                  <Typography variant="body1" sx={{ color: 'text.secondary' }}>
+                  <Typography variant="body1" sx={{ color: 'text.secondary', mb: 0.5 }}>
                     8976437111
+                  </Typography>
+                  <Typography variant="body1" sx={{ color: 'text.secondary' }}>
+                    8451921125
                   </Typography>
                 </Box>
               </ContactInfoItem>
